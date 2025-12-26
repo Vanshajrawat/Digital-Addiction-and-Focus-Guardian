@@ -1,100 +1,85 @@
-# Digital-Addiction-and-Focus-Guardian
+# Digital Addiction \& Focus Guardian
 
-Overview
 
-Digital Addiction & Focus Guardian is a system-level focus enforcement tool designed to prevent digital distractions by blocking websites and desktop applications using policy-based controls instead of easily bypassed browser extensions.
+
+### Overview
+
+Digital Addiction \& Focus Guardian is a system-level focus enforcement tool designed to prevent digital distractions by blocking websites and desktop applications using policy-based controls instead of easily bypassed browser extensions.
 
 The system protects long-term user intent from short-term impulsive behavior through time-locked rules, OS-level enforcement, and tamper detection.
 
-Key Features
 
-System-level website blocking using the OS hosts file
 
-Application blocking via real-time process monitoring
+### Key Features
 
-Unified web dashboard for managing website and app policies
+1. System-level website blocking using the OS hosts file
+2. Application blocking via real-time process monitoring
+3. Unified web dashboard for managing website and app policies
+4. Time-locked enforcement (no instant unblock)
+5. Auto-start on system boot for persistent enforcement
+6. Activity and violation logging
 
-Time-locked enforcement (no instant unblock)
 
-Tamper detection & self-healing for hosts file modifications
 
-Auto-start on system boot for persistent enforcement
+### How It Works
 
-Activity and violation logging
+#### Website Blocking
 
-How It Works
-1. Website Blocking
+1. Websites are redirected to localhost using the system hosts file.
+2. Blocking applies across all browsers.
+3. Multiple domain variants (e.g., www, m) and IPv4/IPv6 are handled.
+4. Entries are added only once (duplicate-safe).
 
-Websites are redirected to localhost using the system hosts file.
 
-Blocking applies across all browsers.
 
-Multiple domain variants (e.g., www, m) and IPv4/IPv6 are handled.
+#### Application Blocking
 
-Entries are added only once (duplicate-safe).
+1. A background process monitors running applications.
+2. If a blocked app is detected (e.g., WhatsApp, VLC, Edge), it is immediately terminated.
+3. Each attempt is logged for accountability.
 
-2. Application Blocking
 
-A background process monitors running applications.
 
-If a blocked app is detected (e.g., WhatsApp, VLC, Edge), it is immediately terminated.
+#### Policy Enforcement
 
-Each attempt is logged for accountability.
+1. Blocks are stored in a local SQLite database.
+2. Users cannot instantly remove blocks.
+3. Unlocking occurs automatically after the policy duration expires.
 
-3. Policy Enforcement
 
-Blocks are stored in a local SQLite database.
 
-Users cannot instantly remove blocks.
+#### Auto-Start on Boot
 
-Unlocking occurs automatically after the policy duration expires.
+1. Enforcement services are registered as privileged startup tasks.
+2. Focus protection continues even after system restarts.
 
-4. Tamper Detection
 
-The system continuously monitors the hosts file.
 
-If blocked entries are manually removed, they are automatically restored.
+### Technology Stack
 
-All tampering attempts are logged.
+1. Backend: Python
+2. Web Framework: Flask
+3. Database: SQLite
+4. System Enforcement: OS hosts file + process monitoring
+5. Platform: Windows
 
-5. Auto-Start on Boot
 
-Enforcement services are registered as privileged startup tasks.
 
-Focus protection continues even after system restarts.
+### Intended Use Cases
 
-Technology Stack
+1. Students preparing for exams
+2. Competitive programmers
+3. Remote workers
+4. Digital detox programs
+5. Educational institutions
+6. Ethical Design
+7. No permanent lock-out
+8. System-level recovery remains possible via administrator access
+9. Prevents impulsive misuse while allowing legitimate recovery
 
-Backend: Python
 
-Web Framework: Flask
 
-Database: SQLite
+### Conclusion
 
-System Enforcement: OS hosts file + process monitoring
+Digital Addiction \& Focus Guardian demonstrates a practical, secure, and scalable approach to digital well-being by combining system-level enforcement, tamper resistance, and user-defined focus policies.
 
-Platform: Windows
-
-Intended Use Cases
-
-Students preparing for exams
-
-Competitive programmers
-
-Remote workers
-
-Digital detox programs
-
-Educational institutions
-
-Ethical Design
-
-No permanent lock-out
-
-System-level recovery remains possible via administrator access
-
-Prevents impulsive misuse while allowing legitimate recovery
-
-Conclusion
-
-Digital Addiction & Focus Guardian demonstrates a practical, secure, and scalable approach to digital well-being by combining system-level enforcement, tamper resistance, and user-defined focus policies.
