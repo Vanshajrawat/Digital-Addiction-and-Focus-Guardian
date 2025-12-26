@@ -36,7 +36,7 @@ The system protects long-term user intent from short-term impulsive behavior thr
 #### Application Blocking
 
 1. A background process monitors running applications.
-2. If a blocked app is detected (e.g., WhatsApp, VLC, Edge), it is immediately terminated.
+2. If a blocked app is detected, it is immediately terminated.
 3. Each attempt is logged for accountability.
 
 
@@ -82,5 +82,5 @@ The system protects long-term user intent from short-term impulsive behavior thr
 
 ### Conclusion
 
-Digital Addiction \& Focus Guardian demonstrates a practical, secure, and scalable approach to digital well-being by combining system-level enforcement, tamper resistance, and user-defined focus policies.
+Digital Addiction \& Focus Guardian demonstrates a practical, secure, and scalable approach to digital well-being by combining system-level enforcement, and user-defined focus policies.
 
